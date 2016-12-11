@@ -1,0 +1,71 @@
+
+$fuenteGlobal:'Open Sans',sans-serif;
+$fuentePrimaria:'Open Sans',sans-serif;
+$fuenteSecundaria:'Open Sans',sans-serif;
+$fuenteTitulos:'Open Sans',sans-serif;
+$fuenteSubitulos:'Open Sans',sans-serif;
+
+
+//Colores
+//Colores Básicos
+$blanco:white;
+$negro:black;
+$rojo:red;
+$azul:blue;
+$verde:green;
+$amarillo:yellow;
+$gris:#F1F1F1;
+$nada:transparent;
+
+//colores gensis
+$naranjada:#f16528;
+
+//Colores Flat (Basados en http://flatuicolors.com/)
+$turquesa:#1abc9c;
+$oceanoVerde:#16a085;
+
+$esmeralda:#2ecc71;
+$sombraEsmeralda:#27ae60;
+
+$piedraDeRio:#3498db;
+$rioProfundo:#2980b9;
+
+$amatista:#9b59b6;
+$glicinas:#8e44ad;
+
+$asfaltoMojado:#34495e;
+$azulMedianoche:#2c3e50;
+
+$florSolar:#f1c40f;
+$naranja:#f39c12;
+
+$zanahoria:#e67e22;
+$calabaza:#d35400;
+
+$alizarina:#e74c3c;
+$granada:#c0392b;
+
+$nubes:#ecf0f1;
+$plata:#bdc3c7;
+
+$concreto:#95a5a6;
+$amianto:#7f8c8d;
+
+$colorTexto:#3D3D3D;
+
+$colorPrimario:$naranjada;
+$colorSecundario:darken($colorPrimario, 10%);
+
+//rutas
+$rutaImg:'../img';
+
+
+//Break points 
+$min-movil:320px;
+$max-movil:640px;
+$min-tablet:768px;
+$max-tablet:1024px;
+$min-laptop:1280px;
+$max-laptop:1366px;
+$escritorio:1420px;
+
