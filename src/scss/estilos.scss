@@ -1,7 +1,4 @@
 $cssCore: false;
 $cssHelpers: false;
-$devMode: false; 
-
-@import 'componentes/var';
-@import 'ed-grid/ed-grid';
-@import 'componentes/mixins';
+$devMode: false;
+@import 'componentes/index';

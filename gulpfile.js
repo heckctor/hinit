@@ -69,13 +69,13 @@ gulp.task('tareasPostcss',() =>
  
  
 //optimizar Imagenes
-gulp.task('optimizar-img', function() {
-    gulp.src('src/img/**/*')
+gulp.task('imagenes', function() {
+    gulp.src('src/images/**/*')
         .pipe(cache(imagemin({
-          optimizationLevel: 3,
+          optimizationLevel: 7,
           progressive: true,
           interlaced: true })))
-        .pipe(gulp.dest('assets/img/'));
+        .pipe(gulp.dest('assets/images/'));
 });
 //Fin optimizar Imagenes
  

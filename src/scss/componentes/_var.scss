@@ -17,8 +17,6 @@ $amarillo:yellow;
 $gris:#F1F1F1;
 $nada:transparent;
 
-//colores gensis
-$naranjada:#f16528;
 
 //Colores Flat (Basados en http://flatuicolors.com/)
 $turquesa:#1abc9c;
@@ -53,11 +51,11 @@ $amianto:#7f8c8d;
 
 $colorTexto:#3D3D3D;
 
-$colorPrimario:$naranjada;
+$colorPrimario:$negro;
 $colorSecundario:darken($colorPrimario, 10%);
 
 //rutas
-$rutaImg:'../img';
+$rutaImg:'../images';
 
 
 //Break points 
