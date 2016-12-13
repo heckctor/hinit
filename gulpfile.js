@@ -1,5 +1,5 @@
 const gulp = require('gulp'),
-      //plugins servidor local y sinconización automatica
+      //plugins servidor local y sincronización automatica
       browserSync = require('browser-sync')
  
       //Plugins para FTP
@@ -9,6 +9,9 @@ const gulp = require('gulp'),
       //PLugins para compilar scss
       plumber = require('gulp-plumber'),
       sass = require('gulp-sass'),
+
+      //PLugins para compilar pug
+      pug = require('gulp-pug'),
  
       //Plugins para optimizar imágenes
       imagemin = require('gulp-imagemin'),
@@ -71,7 +74,18 @@ gulp.task('tareasPostcss',() =>
       .pipe(gulp.dest('assets/css/'))
 );
 //---> Fin PostCss
+
+//---> Pug
+gulp.task('compilarPug',() =>
+  gulp.src('./src/vistas/*.pug')
+  .pipe(pug({
+    pretty:true
+  }))
+  .pipe(gulp.dest('./'))  
+);
+//---> Fin scss
  
+//---> Fin Pug 
  
 //optimizar Imagenes
 gulp.task('imagenes', function() {
@@ -173,6 +187,12 @@ gulp.task('ftp', ['ftp-observar-cambios'] , function() {
   gulp.watch(dirLocales, ['ftp-observar-cambios']);
 });
 
+//Tarea que "observa" y compila los archivos pug
+gulp.task('pug', function() {
+  gulp.watch('./src/vistas/**/*', ['compilarPug']);
+  gulp.watch("./*.html", ['bs-reload']);
+});
+
 //Levanta un servidor local para supervisar archivos html/css
 gulp.task('default', ['browser-sync'] , function() {
   gulp.watch('./src/scss/**/*.scss', ['compilarscss']);
@@ -180,6 +200,7 @@ gulp.task('default', ['browser-sync'] , function() {
   gulp.watch("./assets/css/estilos.css", ['bs-reload']);
   gulp.watch('./src/js/*.js', ['comprimirJs']);
   gulp.watch("./assets/js/**/*", ['bs-reload']);
-  //gulp.watch("./assets/css/**/*.scss", ['bs-reload']);
+  gulp.watch('./src/vistas/**/*', ['compilarPug']);
+  gulp.watch("./src/vistas/**/*", ['bs-reload']);
   gulp.watch("./*.html", ['bs-reload']);
 });
