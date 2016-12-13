@@ -1,5 +1,5 @@
 const gulp = require('gulp'),
-      //plugins servidor local y sincronización automatica
+      //plugins servidor local y sincronización automática
       browserSync = require('browser-sync')
  
       //Plugins para FTP
@@ -188,19 +188,22 @@ gulp.task('ftp', ['ftp-observar-cambios'] , function() {
 });
 
 //Tarea que "observa" y compila los archivos pug
-gulp.task('pug', function() {
+gulp.task('pug' , function() {
   gulp.watch('./src/vistas/**/*', ['compilarPug']);
-  gulp.watch("./*.html", ['bs-reload']);
 });
 
-//Levanta un servidor local para supervisar archivos html/css
+//Levanta un servidor local para supervisar archivos
+var dirList = [
+    './assets/css/estilos.css',
+    './assets/js/**/*',
+    './src/vistas/*.pug',
+    './assets/images/**/*',
+    './*.html'
+];
 gulp.task('default', ['browser-sync'] , function() {
   gulp.watch('./src/scss/**/*.scss', ['compilarscss']);
   gulp.watch('./src/css/**/*.css', ['tareasPostcss']);
-  gulp.watch("./assets/css/estilos.css", ['bs-reload']);
   gulp.watch('./src/js/*.js', ['comprimirJs']);
-  gulp.watch("./assets/js/**/*", ['bs-reload']);
   gulp.watch('./src/vistas/**/*', ['compilarPug']);
-  gulp.watch("./src/vistas/**/*", ['bs-reload']);
-  gulp.watch("./*.html", ['bs-reload']);
+  gulp.watch(dirList, ['bs-reload']);
 });
