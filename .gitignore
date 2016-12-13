@@ -49,3 +49,4 @@ npm-debug.log
 assets/js/ed-grid.js.map
 assets/js/babel/.tern-port
 yarn.lock
+yarn-error.log

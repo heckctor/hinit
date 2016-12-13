@@ -16,7 +16,12 @@ const gulp = require('gulp'),
  
       //PLugins Post CSS
       postcss = require('gulp-postcss'),
-      cssnano = require('cssnano');//autoprefixer
+      cssnano = require('cssnano'),//autoprefixer
+
+      //comprimir JS
+      uglifyjs = require('uglify-js'),
+      minifier = require('gulp-uglify/minifier'),
+      pump = require('pump');
  
  
 //---> Sincronizar Navegador
@@ -78,7 +83,24 @@ gulp.task('imagenes', function() {
         .pipe(gulp.dest('assets/images/'));
 });
 //Fin optimizar Imagenes
+
+//Comprimir JS
+gulp.task('comprimirJs', function (cb) {
+  // the same options as described above 
+  var options = {
+    preserveComments: 'license'
+  };
  
+  pump([
+      gulp.src('src/js/*.js'),
+      //gulp.src('src/js/**/*'),//Comprimir todos los JS
+      minifier(options, uglifyjs),
+      gulp.dest('assets/js/')
+    ],
+    cb
+  );
+});
+//Fin Comprimir JS
  
 //---> FTP
 //Configuración de conexion
@@ -156,6 +178,8 @@ gulp.task('default', ['browser-sync'] , function() {
   gulp.watch('./src/scss/**/*.scss', ['compilarscss']);
   gulp.watch('./src/css/**/*.css', ['tareasPostcss']);
   gulp.watch("./assets/css/estilos.css", ['bs-reload']);
+  gulp.watch('./src/js/*.js', ['comprimirJs']);
+  gulp.watch("./assets/js/**/*", ['bs-reload']);
   //gulp.watch("./assets/css/**/*.scss", ['bs-reload']);
   gulp.watch("./*.html", ['bs-reload']);
 });

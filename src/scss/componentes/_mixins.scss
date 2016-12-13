@@ -62,3 +62,25 @@
 @mixin cursiva($estilo:italic){
   font-style: $estilo;
 }
+//mediaqueries
+@mixin min-media($corte){
+  @media screen and(min-width:$corte){
+    @content;
+  }
+}
+@mixin max-media($corte){
+  @media screen and(max-width:$corte){
+    @content;
+  }
+}
+@mixin min-max($min,$max){
+  @media only screen and (min-width : $min) and (max-width: $max )  {
+    @content;
+  }
+}
+//Degradado
+@mixin degradado($angulo:0deg,$colorA:$nada,$colorB:$nada,$colorC:$nada, $imagen:$nada) {
+    background: -webkit-linear-gradient($angulo,$colorA,$colorB,$colorC)$imagen;
+    background: -moz-linear-gradient($angulo,$colorA,$colorB,$colorC)$imagen;
+    background: linear-gradient($angulo,$colorA,$colorB,$colorC)$imagen;
+}
