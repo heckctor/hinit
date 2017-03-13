@@ -1,0 +1,86 @@
+//Transiciones
+@mixin animacion($efecto,$tiempo) {
+    transition: all $efecto $tiempo;
+}
+@mixin transicion($retraso:0s, $duracion:.5s, $propiedad:all,$efecto:ease) {
+  transition-delay: $retraso;
+  transition-duration: $duracion;
+  transition-property: $propiedad;
+  transition-timing-function: $efecto;
+}
+
+//Cursores
+@mixin mano($cursor:pointer) {
+    cursor:$cursor;
+}
+//placeholders
+@mixin placeholder($color) {
+    input::-webkit-input-placeholder {color:$color}
+    input::-moz-placeholder {color:$color}
+    input:-ms-input-placeholder {color:$color}
+}
+//Sombras
+@mixin sombra($ejeX: 0px,$ejeY: 0px,$blur: 5px,$alfa: 0.5) {
+    -moz-box-shadow: $ejeX $ejeY $blur rgba(0,0,0,$alfa);
+    box-shadow: $ejeX $ejeY $blur rgba(0,0,0,$alfa);
+}
+@mixin sombraSolida($ejeX: 0px,$ejeY: 0px,$ejeZ:0px,$blur: 5px,$alfa:fade($negro,50%)) {
+    -moz-box-shadow: $ejeX $ejeY $ejeZ $blur $alfa;
+    box-shadow: $ejeX $ejeY $ejeZ $blur $alfa;
+}
+//Textos
+@mixin fuente($size:14) {
+    $em : $size / 14;
+    font-size:$size*1px;//Fallback navegadores antiguos
+    font-size: "#{$em}rem";
+}
+
+@mixin sombraTexto($ejeX: 0px,$ejeY: 0px,$blur: 5px, $color: $negro, $por:50%) {
+    -moz-text-shadow: $ejeX $ejeY $blur fade($color, $por);
+    text-shadow: $ejeX $ejeY $blur fade($color, $por);
+}
+
+@mixin mayusculas($mayus: uppercase) {
+    text-transform: $mayus;
+}
+@mixin capitales($cap:capitalize) {
+    text-transform:$cap;
+}
+@mixin centrado($cen: center) {
+    text-align:$cen;
+}
+@mixin izquierda($izq: left) {
+    text-align:$izq;
+}
+@mixin derecha($der: right) {
+    text-align:$der;
+}
+@mixin justificado($just:justify) {
+    text-align:$just;
+}
+
+@mixin cursiva($estilo:italic){
+  font-style: $estilo;
+}
+//mediaqueries
+@mixin min-media($corte){
+  @media screen and(min-width:$corte){
+    @content;
+  }
+}
+@mixin max-media($corte){
+  @media screen and(max-width:$corte){
+    @content;
+  }
+}
+@mixin min-max($min,$max){
+  @media only screen and (min-width : $min) and (max-width: $max )  {
+    @content;
+  }
+}
+//Degradado
+@mixin degradado($angulo:0deg,$colorA:$nada,$colorB:$nada,$colorC:$nada, $imagen:$nada) {
+    background: -webkit-linear-gradient($angulo,$colorA,$colorB,$colorC)$imagen;
+    background: -moz-linear-gradient($angulo,$colorA,$colorB,$colorC)$imagen;
+    background: linear-gradient($angulo,$colorA,$colorB,$colorC)$imagen;
+}

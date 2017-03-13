@@ -1,4 +1,25 @@
+//***Librerias***//
+@import 'components/libraries/normalize';
+@import 'components/libraries/ed-grid/ed-grid';
 $cssCore: false;
 $cssHelpers: false;
 $devMode: false;
-@import 'componentes/index';
+
+//***Estilos***//
+//01___________Variables
+@import 'components/_var';
+
+//02___________Modulos / Mixins
+@import 'components/_modules';
+
+//03___________Estilos Base
+@import 'components/_base';
+
+//04___________Estructura
+@import 'components/_layout';
+
+//05___________Estilos
+@import 'components/_theme';
+
+//06___________Estilos de estado
+@import 'components/_states';

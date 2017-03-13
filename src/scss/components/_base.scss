@@ -58,12 +58,3 @@ a:hover {
 p {
     margin: .5em 0;
 }
-
-#contenedor {
-    .contenido {
-        max-width: $min-laptop;
-        margin: auto;
-        min-width: $min-movil;
-        padding: 0 .5em;
-    }
-}

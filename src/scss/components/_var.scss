@@ -1,0 +1,30 @@
+//Fuentes
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+$fuenteGlobal:'Open Sans',sans-serif;
+$fuentePrimaria:'Open Sans',sans-serif;
+$fuenteSecundaria:'Open Sans',sans-serif;
+$fuenteTitulos:'Open Sans',sans-serif;
+$fuenteSubitulos:'Open Sans',sans-serif;
+//Colores Básicos
+$blanco:white;
+$negro:black;
+$rojo:red;
+$azul:blue;
+$verde:green;
+$amarillo:yellow;
+$gris:#F1F1F1;
+$nada:transparent;
+
+$colorTexto:$negro;
+$colorPrimario:$negro;
+$colorSecundario:$negro;
+//rutas
+$rutaImg:'../images';
+//Break points
+$min-movil:320px;
+$max-movil:640px;
+$min-tablet:768px;
+$max-tablet:1024px;
+$min-laptop:1280px;
+$max-laptop:1366px;
+$escritorio:1420px;
