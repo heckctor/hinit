@@ -2239,6 +2239,24 @@ body {
   color: #383838;
   font-family: "Open Sans", sans-serif; }
 
+h6 {
+  color: #2196F3; }
+
+h5 {
+  color: #2196F3; }
+
+h4 {
+  color: #2196F3; }
+
+h3 {
+  color: #2196F3; }
+
+h2 {
+  color: #2196F3; }
+
+h1 {
+  color: #2196F3; }
+
 ::selection {
   color: #2196F3;
   background: rgba(33, 150, 243, 0.2); }
@@ -2277,10 +2295,10 @@ form * {
     transition-timing-function: ease; }
 
 fieldset {
-  border: 1px solid gray; }
+  border: 1px solid #2196F3; }
 
 input, textarea {
-  border: 1px solid gray;
+  border: 1px solid #2196F3;
   width: 100%;
   padding: 5px;
   display: block;
@@ -2296,24 +2314,48 @@ input[type="reset"], input[type="submit"] {
   display: inline-block;
   width: initial; }
 
+input[type="submit"] {
+  background: #2196F3;
+  color: white; }
+  input[type="submit"]:hover {
+    background: #0c7cd5; }
+
 textarea {
   min-height: 150px; }
 
 table {
-  border: solid 1px gray;
+  border: solid 1px #2196F3;
   margin: 10px 0; }
   table thead tr th {
-    background: #383838;
+    background: #2196F3;
     color: white; }
   table tbody tr:nth-child(even) {
-    background: whitesmoke; }
+    background: #e3f2fd; }
   table th, table td {
     padding: 10px;
     text-align: center; }
   table td {
-    border: solid 1px gray; }
+    border: solid 1px #2196F3; }
 
-/* Elementos de formulario */
+input[type="file"] {
+  display: none; }
+
+.cargar-archivo {
+  border: 1px solid #2196F3;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer; }
+
+/* fin Elementos de formulario */
 blockquote {
   font-size: 30px;
   font-style: italic; }
+
+hr {
+  border: none;
+  background: #2196F3;
+  height: 1px;
+  margin: 10px 0; }
+
+sub, sup, cite, acronym {
+  color: #2196F3; }

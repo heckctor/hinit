@@ -1,0 +1,131 @@
+body{
+    color: $colorTexto;
+    font-family: $fuenteGlobal;
+}
+@for $i from 1 through 6 {
+  h#{7 - $i} {
+    color:$colorGenerico;
+  }
+}
+::selection {
+    color:$colorGenerico; 
+    background:transparentize($colorGenerico, .8);
+}
+
+a {
+    color: $colorGenerico;
+    @include transicion;
+    &:hover{
+        color: darken($colorGenerico,10%);
+        font-style: italic;
+        @include transicion;
+    }   
+}
+a:visited { 
+    color: darken($colorGenerico, 25%);
+}
+a:focus {}
+a:active,
+a:focus,
+a:hover {}
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/*Elementos de formulario */
+form{
+    *{
+        @include transicion;
+        &:hover{
+            @include transicion;
+        }
+    }
+}
+    fieldset{
+        border: 1px solid $colorGenerico;
+    }
+    input, textarea{
+        border: 1px solid $colorGenerico;
+        width: 100%;
+        padding: 5px;
+        display: block;
+        margin:7px 0;
+        
+        &:hover, &:focus{
+            background: darken($blanco,3%);
+        }
+    }
+    input[type="radio"], input[type="checkbox"]{
+        display: inline;
+        width: initial;
+    }
+    input[type="select"]{}
+    input[type="reset"], input[type="submit"]{
+        display: inline-block;
+        width:initial;
+    }
+    input[type="submit"]{
+        background: $colorGenerico;
+        color:$blanco;
+        &:hover{
+            background: darken($colorGenerico,10%);
+        }
+    }
+    input{}
+    textarea{
+        min-height: 150px;
+    }
+    table{
+        border: solid 1px $colorGenerico;
+        margin:10px 0;
+        thead{
+            tr{
+                th{
+                    background: $colorGenerico;
+                    color:$blanco;
+                }
+            } 
+        }
+        tbody{
+            tr{
+                &:nth-child(even){
+                    background: lighten($colorGenerico,40%);
+                }
+            }
+        }
+        th,td{
+            padding: 10px;
+            text-align: center;
+        }
+        td{
+            border: solid 1px $colorGenerico;
+           
+        }
+    }
+
+input[type="file"] {
+    display: none;
+}
+.cargar-archivo {
+    border: 1px solid $colorGenerico;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+/* fin Elementos de formulario */
+
+blockquote{
+    font-size: 30px;
+    font-style: italic;
+}
+hr{
+    border: none;
+    background: $colorGenerico;
+    height: 1px;
+    margin:10px 0;
+}
+
+sub, sup, cite, acronym{
+    color:$colorGenerico;
+}

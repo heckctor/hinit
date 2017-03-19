@@ -105,10 +105,10 @@ fieldset
       label(for='password') Password:
     p
       input.password(type='password', name='password')
-    p
-      label(for='file') File Input:
-      br
-      input.file(type='file', name='file')
+      label.cargar-archivo(for='carga')
+        i.fa.fa-cloud-upload
+        |  Subir Archivo
+      input#carga(type='file')
     p
       input.button(type='reset', value='Clear')
       input.button(type='submit', value='Submit')
