@@ -109,9 +109,14 @@ input[type="file"] {
 }
 .cargar-archivo {
     border: 1px solid $colorGenerico;
+    color:$colorGenerico;
+    background: transparentize($colorGenerico,.9);
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
+    &:hover{
+        background: transparentize($colorGenerico,.7);
+    }
 }
 /* fin Elementos de formulario */
 
