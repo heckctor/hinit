@@ -11,7 +11,7 @@ hr
 h2 Párrafo
 p
   | Lorem ipsum dolor sit amet, 
-  a(href='#', title='test link') test link
+  a(href='#', title='enlace') Test Enlace
   |  adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
 p
   | Lorem ipsum dolor sit amet, 
@@ -25,12 +25,28 @@ dl
   dd This is a definition list division.
 h3 Ordered List
 ol
-  li List Item 1
-  li List Item 2
-  li List Item 3
+  li List Item
+  li List Item
+    ol
+      li List Sub item
+      li List Sub item
+        ol
+          li List Sub sub Item
+          li List Sub sub Item
+          li List Sub sub Item
+      li List Sub item 3
+  li List Item
 h3 Unordered List
 ul
   li List Item 1
+    ul
+      li List Sub item 1
+      li List Sub item 2
+        ul
+          li List Sub sub Item 1
+          li List Sub sub Item 2
+          li List Sub sub Item 3
+      li List Sub item 3
   li List Item 2
   li List Item 3
 hr
@@ -97,22 +113,21 @@ fieldset
       input.button(type='reset', value='Clear')
       input.button(type='submit', value='Submit')
     p
-p
-  small
-    a(href='#wrapper') [top]
+
 hr
 h2 Tablas
 table(cellspacing='0', cellpadding='0')
-  tbody
+  thead
     tr
       th Table Header 1
       th Table Header 2
       th Table Header 3
+  tbody
     tr
       td Division 1
       td Division 2
       td Division 3
-    tr.even
+    tr
       td Division 1
       td Division 2
       td Division 3
@@ -120,9 +135,11 @@ table(cellspacing='0', cellpadding='0')
       td Division 1
       td Division 2
       td Division 3
-p
-  small
-    a(href='#wrapper') [top]
+    tr
+      td Division 1
+      td Division 2
+      td Division 3
+
 hr
 h2 Varios – abbr, acronym, pre, code, sub, sup, etc.
 p

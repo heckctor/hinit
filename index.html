@@ -28,7 +28,7 @@
           <h6>Título 6</h6>
           <hr>
           <h2>Párrafo</h2>
-          <p>Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+          <p>Lorem ipsum dolor sit amet, <a href="#" title="enlace">Test Enlace</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
           <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
           <hr>
           <h2>Tipos de Listas</h2>
@@ -39,13 +39,37 @@
           </dl>
           <h3>Ordered List</h3>
           <ol>
-            <li>List Item 1</li>
-            <li>List Item 2</li>
-            <li>List Item 3</li>
+            <li>List Item</li>
+            <li>List Item
+              <ol>
+                <li>List Sub item</li>
+                <li>List Sub item
+                  <ol>
+                    <li>List Sub sub Item</li>
+                    <li>List Sub sub Item</li>
+                    <li>List Sub sub Item</li>
+                  </ol>
+                </li>
+                <li>List Sub item 3</li>
+              </ol>
+            </li>
+            <li>List Item</li>
           </ol>
           <h3>Unordered List</h3>
           <ul>
-            <li>List Item 1</li>
+            <li>List Item 1
+              <ul>
+                <li>List Sub item 1</li>
+                <li>List Sub item 2
+                  <ul>
+                    <li>List Sub sub Item 1</li>
+                    <li>List Sub sub Item 2</li>
+                    <li>List Sub sub Item 3</li>
+                  </ul>
+                </li>
+                <li>List Sub item 3</li>
+              </ul>
+            </li>
             <li>List Item 2</li>
             <li>List Item 3</li>
           </ul>
@@ -113,22 +137,28 @@
               <p></p>
             </form>
           </fieldset>
-          <p><small><a href="#wrapper">[top]</a></small></p>
           <hr>
           <h2>Tablas</h2>
           <table cellspacing="0" cellpadding="0">
-            <tbody>
+            <thead>
               <tr>
                 <th>Table Header 1</th>
                 <th>Table Header 2</th>
                 <th>Table Header 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Division 1</td>
+                <td>Division 2</td>
+                <td>Division 3</td>
               </tr>
               <tr>
                 <td>Division 1</td>
                 <td>Division 2</td>
                 <td>Division 3</td>
               </tr>
-              <tr class="even">
+              <tr>
                 <td>Division 1</td>
                 <td>Division 2</td>
                 <td>Division 3</td>
@@ -140,7 +170,6 @@
               </tr>
             </tbody>
           </table>
-          <p><small><a href="#wrapper">[top]</a></small></p>
           <hr>
           <h2>Varios – abbr, acronym, pre, code, sub, sup, etc.</h2>
           <p>Lorem <sup>superscript</sup> dolor <sub>subscript</sub> amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. 

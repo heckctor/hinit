@@ -1,1 +1,8 @@
-
+#contenedor {
+    .contenido {
+        max-width: $min-laptop;
+        margin: auto;
+        min-width: $min-movil;
+        padding: 0 .5em;
+    }
+}

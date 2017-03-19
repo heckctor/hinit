@@ -7,17 +7,19 @@ $fuenteTitulos:'Open Sans',sans-serif;
 $fuenteSubitulos:'Open Sans',sans-serif;
 //Colores Básicos
 $blanco:white;
+$gris:darken($blanco,50%);
 $negro:black;
-$rojo:red;
-$azul:blue;
-$verde:green;
-$amarillo:yellow;
-$gris:#F1F1F1;
+$oxford:lighten($negro,22%);
+$rojo:#F44336;
+$azul:#2196F3;
+$verde:#4CAF50;
+$amarillo:#FFC107;
 $nada:transparent;
 
-$colorTexto:$negro;
-$colorPrimario:$negro;
-$colorSecundario:$negro;
+
+$colorTexto:$oxford;
+$colorPrimario:$azul;
+$colorSecundario:$verde;
 //rutas
 $rutaImg:'../images';
 //Break points
