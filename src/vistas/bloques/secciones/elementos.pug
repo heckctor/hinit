@@ -81,26 +81,44 @@ fieldset
           option(value='3') Option 3
     p
       label(for='radio_buttons') Radio Buttons:
-    p
-      input.radio(type='radio', name='radio_button', value='radio_1')
-      |  Radio 1
-      br
-      input.radio(type='radio', name='radio_button', value='radio_2')
-      |  Radio 2
-      br
-      input.radio(type='radio', name='radio_button', value='radio_3')
-      |  Radio 3
+    div
+  div
+    input(type='radio', id="radio1", name='radio', value='1', checked='checked')
+    label(for='radio1')
+      span
+        span
+      | Opción 1
+  div
+    input(type='radio', id="radio2", name='radio', value='2')
+    label(for='radio2')
+      span
+        span
+      | Opción 2
+  div
+    input(type='radio', id="radio3", name='radio', value='3')
+    label(for='radio3')
+      span
+        span
+      | Opción 3
     p
       label(for='checkboxes') Checkboxes:
-    p
-      input.checkbox(type='checkbox', name='checkboxes', value='check_1')
-      |  Radio 1
-      br
-      input.checkbox(type='checkbox', name='checkboxes', value='check_2')
-      |  Radio 2
-      br
-      input.checkbox(type='checkbox', name='checkboxes', value='check_3')
-      |  Radio 3
+    div
+  div
+    input#checkbox1(type='checkbox', name='checkbox', value='1', checked='checked')
+    label(for='checkbox1')
+      span
+      | Opción 1
+  div
+    input#checkbox2(type='checkbox', name='checkbox', value='2')
+    label(for='checkbox2')
+      span
+      | Opción 2
+  div
+    input#checkbox3(type='checkbox', name='checkbox', value='3')
+    label(for='checkbox3')
+      span
+      | Opción 3
+
     p
       label(for='password') Password:
     p

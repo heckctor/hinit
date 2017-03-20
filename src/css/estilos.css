@@ -2350,6 +2350,60 @@ input[type="file"] {
   .cargar-archivo:hover {
     background: rgba(33, 150, 243, 0.3); }
 
+select {
+  border: solid 1px #2196F3;
+  color: #2196F3; }
+
+input[type=checkbox]:not(old),
+input[type=radio]:not(old) {
+  width: 2em;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  opacity: 0; }
+
+input[type=checkbox]:not(old) + label,
+input[type=radio]:not(old) + label {
+  display: inline-block;
+  margin-left: -2em;
+  line-height: 1.5em; }
+
+input[type=checkbox]:not(old) + label > span,
+input[type=radio]:not(old) + label > span {
+  display: inline-block;
+  width: 0.875em;
+  height: 0.875em;
+  margin: 0.25em 0.5em 0.25em 0.25em;
+  border: 0.0625em solid #2196F3;
+  border-radius: 0.25em;
+  background: white;
+  background-image: linear-gradient(white, white);
+  vertical-align: bottom; }
+
+input[type=checkbox]:not(old):checked + label > span,
+input[type=radio]:not(old):checked + label > span {
+  background-image: linear-gradient(white, white); }
+
+input[type=checkbox]:not(old):checked + label > span:before {
+  content: '✓';
+  display: block;
+  width: 1em;
+  color: #2196F3;
+  font-size: 0.875em;
+  line-height: 1em;
+  text-align: center;
+  font-weight: bold; }
+
+input[type=radio]:not(old):checked + label > span > span {
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  margin: 0.125em;
+  border: 0.0625em solid #2196F3;
+  border-radius: 0.125em;
+  background: #2196F3;
+  background-image: linear-gradient(#2196F3, #0d8aee); }
+
 /* fin Elementos de formulario */
 blockquote {
   font-size: 30px;

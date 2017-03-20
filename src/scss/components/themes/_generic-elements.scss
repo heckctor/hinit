@@ -4,25 +4,25 @@ body{
 }
 @for $i from 1 through 6 {
   h#{7 - $i} {
-    color:$colorGenerico;
+    color:$elementos;
   }
 }
 ::selection {
-    color:$colorGenerico; 
-    background:transparentize($colorGenerico, .8);
+    color:$elementos; 
+    background:transparentize($elementos, .8);
 }
 
 a {
-    color: $colorGenerico;
+    color: $elementos;
     @include transicion;
     &:hover{
-        color: darken($colorGenerico,10%);
+        color: darken($elementos,10%);
         font-style: italic;
         @include transicion;
     }   
 }
 a:visited { 
-    color: darken($colorGenerico, 25%);
+    color: darken($elementos, 25%);
 }
 a:focus {}
 a:active,
@@ -43,10 +43,10 @@ form{
     }
 }
     fieldset{
-        border: 1px solid $colorGenerico;
+        border: 1px solid $elementos;
     }
     input, textarea{
-        border: 1px solid $colorGenerico;
+        border: 1px solid $elementos;
         width: 100%;
         padding: 5px;
         display: block;
@@ -66,10 +66,10 @@ form{
         width:initial;
     }
     input[type="submit"]{
-        background: $colorGenerico;
+        background: $elementos;
         color:$blanco;
         &:hover{
-            background: darken($colorGenerico,10%);
+            background: darken($elementos,10%);
         }
     }
     input{}
@@ -77,12 +77,12 @@ form{
         min-height: 150px;
     }
     table{
-        border: solid 1px $colorGenerico;
+        border: solid 1px $elementos;
         margin:10px 0;
         thead{
             tr{
                 th{
-                    background: $colorGenerico;
+                    background: $elementos;
                     color:$blanco;
                 }
             } 
@@ -90,7 +90,7 @@ form{
         tbody{
             tr{
                 &:nth-child(even){
-                    background: lighten($colorGenerico,40%);
+                    background: lighten($elementos,40%);
                 }
             }
         }
@@ -99,7 +99,7 @@ form{
             text-align: center;
         }
         td{
-            border: solid 1px $colorGenerico;
+            border: solid 1px $elementos;
            
         }
     }
@@ -108,15 +108,70 @@ input[type="file"] {
     display: none;
 }
 .cargar-archivo {
-    border: 1px solid $colorGenerico;
-    color:$colorGenerico;
-    background: transparentize($colorGenerico,.9);
+    border: 1px solid $elementos;
+    color:$elementos;
+    background: transparentize($elementos,.9);
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
     &:hover{
-        background: transparentize($colorGenerico,.7);
+        background: transparentize($elementos,.7);
     }
+}
+select{
+    border: solid 1px $elementos;
+    color:$elementos;
+}
+input[type=checkbox]:not(old),
+input[type=radio   ]:not(old){
+  width     : 2em;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1em;
+  opacity   : 0;
+}
+input[type=checkbox]:not(old) + label,
+input[type=radio   ]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -2em;
+  line-height  : 1.5em;
+}
+input[type=checkbox]:not(old) + label > span,
+input[type=radio   ]:not(old) + label > span{
+  display          : inline-block;
+  width            : 0.875em;
+  height           : 0.875em;
+  margin           : 0.25em 0.5em 0.25em 0.25em;
+  border           : 0.0625em solid $elementos;
+  border-radius    : 0.25em;
+  background       : $blanco;
+  background-image :         linear-gradient($blanco,$blanco);
+  vertical-align   : bottom;
+}
+input[type=checkbox]:not(old):checked + label > span,
+input[type=radio   ]:not(old):checked + label > span{
+  background-image :         linear-gradient($blanco,$blanco);
+}
+input[type=checkbox]:not(old):checked + label > span:before{
+  content     : '✓';
+  display     : block;
+  width       : 1em;
+  color       : $elementos;
+  font-size   : 0.875em;
+  line-height : 1em;
+  text-align  : center;
+//text-shadow : 0 0 0.0714em $elementos;
+  font-weight : bold;
+}
+input[type=radio]:not(old):checked + label > span > span{
+  display          : block;
+  width            : 0.5em;
+  height           : 0.5em;
+  margin           : 0.125em;
+  border           : 0.0625em solid $elementos;
+  border-radius    : 0.125em;
+  background       :$elementos;
+  background-image :         linear-gradient(($elementos),darken($elementos,5%));
 }
 /* fin Elementos de formulario */
 
@@ -126,11 +181,11 @@ blockquote{
 }
 hr{
     border: none;
-    background: $colorGenerico;
+    background: $elementos;
     height: 1px;
     margin:10px 0;
 }
 
 sub, sup, cite, acronym{
-    color:$colorGenerico;
+    color:$elementos;
 }
