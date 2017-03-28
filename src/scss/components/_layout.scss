@@ -1,8 +1,5 @@
-#contenedor {
-    .contenido {
-        max-width: $min-laptop;
-        margin: auto;
-        min-width: $min-movil;
-        padding: 0 .5em;
-    }
-}
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/main';
+@import 'layout/home';
+@import 'layout/footer';

@@ -43,7 +43,7 @@ const gulp = require('gulp'),
  
  
 //---> scss
-gulp.task('compilarscss',() =>
+gulp.task('sass-compile',() =>
   gulp.src('./src/scss/**/*.scss')
       .pipe(plumber({
         errorHandler: function(error) {
@@ -68,15 +68,15 @@ plugPostcss = [
   })
 ];
  
-gulp.task('tareasPostcss',() =>
-  gulp.src('./src/css/**/*.css')
+gulp.task('tasks-postcss',() =>
+  gulp.src('./src/css/*.css')
       .pipe(postcss(plugPostcss))
       .pipe(gulp.dest('assets/css/'))
 );
 //---> Fin PostCss
 
 //---> Pug
-gulp.task('compilarPug',() =>
+gulp.task('pug-compile',() =>
   gulp.src('./src/vistas/*.pug')
   .pipe(pug({
     pretty:true
@@ -88,7 +88,7 @@ gulp.task('compilarPug',() =>
 //---> Fin Pug 
  
 //optimizar Imagenes
-gulp.task('imagenes', function() {
+gulp.task('images', function() {
     gulp.src('src/images/**/*')
         .pipe(cache(imagemin({
           optimizationLevel: 7,
@@ -99,7 +99,7 @@ gulp.task('imagenes', function() {
 //Fin optimizar Imagenes
 
 //Comprimir JS
-gulp.task('comprimirJs', function (cb) {
+gulp.task('compress-js', function (cb) {
   // the same options as described above 
   var options = {
     preserveComments: 'license'
@@ -154,7 +154,7 @@ function getFtpConnection() {
  * Copia los archivos al servidor
  *
  */
- gulp.task('ftp-subir', function() {
+ gulp.task('upload', function() {
      var conn = getFtpConnection();
      return gulp.src(dirLocales, { base: '.', buffer: false })
          .pipe(conn.newer(dirRemoto)) // Sube todo
@@ -165,7 +165,7 @@ function getFtpConnection() {
    copia los nuevos archivos al servidor cada vez
    que se detecta un cambio
  **/
- gulp.task('ftp-observar-cambios', function() {
+ gulp.task('ftp-watch', function() {
      var conn = getFtpConnection();
      gulp.watch(dirLocales)
          .on('change', function(event) {
@@ -181,15 +181,15 @@ function getFtpConnection() {
  
 //Tarea que "observa" los directorios locales, compila scss, 
 //minifica el css y sube a un servidor los cambios de cualquier archivo
-gulp.task('ftp', ['ftp-observar-cambios'] , function() {
-  gulp.watch('./src/scss/**/*.scss', ['compilarscss']);
-  gulp.watch('./src/css/**/*.css', ['tareasPostcss']);
-  gulp.watch(dirLocales, ['ftp-observar-cambios']);
+gulp.task('ftp', ['ftp-watch'] , function() {
+  gulp.watch('./src/scss/**/*.scss', ['sass-compile']);
+  gulp.watch('./src/css/**/*.css', ['tasks-postcss']);
+  gulp.watch(dirLocales, ['ftp-watch']);
 });
 
 //Tarea que "observa" y compila los archivos pug
 gulp.task('pug' , function() {
-  gulp.watch('./src/vistas/**/*', ['compilarPug']);
+  gulp.watch('./src/vistas/**/*', ['pug-compile']);
 });
 
 //Levanta un servidor local para supervisar archivos
@@ -201,9 +201,9 @@ var dirList = [
     './*.html'
 ];
 gulp.task('default', ['browser-sync'] , function() {
-  gulp.watch('./src/scss/**/*.scss', ['compilarscss']);
-  gulp.watch('./src/css/**/*.css', ['tareasPostcss']);
-  gulp.watch('./src/js/*.js', ['comprimirJs']);
-  gulp.watch('./src/vistas/**/*', ['compilarPug']);
+  gulp.watch('./src/scss/**/*.scss', ['sass-compile']);
+  gulp.watch('./src/css/**/*.css', ['tasks-postcss']);
+  gulp.watch('./src/js/*.js', ['compress-js']);
+  gulp.watch('./src/vistas/**/*', ['pug-compile']);
   gulp.watch(dirList, ['bs-reload']);
 });

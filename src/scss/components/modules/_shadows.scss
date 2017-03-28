@@ -1,0 +1,9 @@
+//Sombras
+@mixin sombra($ejeX: 0px,$ejeY: 0px,$blur: 5px,$alfa: 0.5) {
+    -moz-box-shadow: $ejeX $ejeY $blur rgba(0,0,0,$alfa);
+    box-shadow: $ejeX $ejeY $blur rgba(0,0,0,$alfa);
+}
+@mixin sombraSolida($ejeX: 0px,$ejeY: 0px,$ejeZ:0px,$blur: 5px,$alfa:fade($negro,50%)) {
+    -moz-box-shadow: $ejeX $ejeY $ejeZ $blur $alfa;
+    box-shadow: $ejeX $ejeY $ejeZ $blur $alfa;
+}

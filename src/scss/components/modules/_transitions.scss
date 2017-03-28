@@ -1,0 +1,10 @@
+//Transiciones
+@mixin animacion($efecto,$tiempo) {
+    transition: all $efecto $tiempo;
+}
+@mixin transicion($retraso:0s, $duracion:.5s, $propiedad:all,$efecto:ease) {
+  transition-delay: $retraso;
+  transition-duration: $duracion;
+  transition-property: $propiedad;
+  transition-timing-function: $efecto;
+}

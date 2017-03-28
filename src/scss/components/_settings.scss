@@ -1,11 +1,20 @@
-//Fuentes
+@charset "UTF-8";
+
+// ----------------------
+// == Site settings
+// ----------------------
+
+// Fonts
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 $fuenteGlobal:'Open Sans',sans-serif;
 $fuentePrimaria:'Open Sans',sans-serif;
 $fuenteSecundaria:'Open Sans',sans-serif;
 $fuenteTitulos:'Open Sans',sans-serif;
 $fuenteSubitulos:'Open Sans',sans-serif;
-//Colores Básicos
+
+// = Colors
+// -----------------------------
+
 $blanco:white;
 $gris:darken($blanco,50%);
 $negro:black;
@@ -24,7 +33,7 @@ $colorSecundario:$verde;
 //Elementos genericos
 $elementos:$azul;
 
-//rutas
+//Path's
 $rutaImg:'../images';
 //Break points
 $min-movil:320px;
@@ -34,3 +43,10 @@ $max-tablet:1024px;
 $min-laptop:1280px;
 $max-laptop:1366px;
 $escritorio:1420px;
+
+
+// = edGrid config
+// -----------------------------
+$cssCore: false;
+$cssHelpers: false;
+$devMode: false;

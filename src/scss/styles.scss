@@ -1,0 +1,19 @@
+//***Estilos***//
+//01___________Variables
+@import 'components/settings';
+
+//02___________Modulos / Mixins
+@import 'components/modules';
+
+//03___________Estilos Base
+@import 'components/base';
+
+//04___________Estructura
+@import 'components/layout';
+
+//05___________Estilos
+@import 'components/theme';
+
+//06___________Estilos de estado
+@import 'components/states';
+ 

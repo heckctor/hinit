@@ -1,0 +1,16 @@
+
+
+
+//placeholders
+@mixin placeholder($color) {
+    input::-webkit-input-placeholder {color:$color}
+    input::-moz-placeholder {color:$color}
+    input:-ms-input-placeholder {color:$color}
+}
+
+//Degradado
+@mixin degradado($angulo:0deg,$colorA:$nada,$colorB:$nada,$colorC:$nada, $imagen:$nada) {
+    background: -webkit-linear-gradient($angulo,$colorA,$colorB,$colorC)$imagen;
+    background: -moz-linear-gradient($angulo,$colorA,$colorB,$colorC)$imagen;
+    background: linear-gradient($angulo,$colorA,$colorB,$colorC)$imagen;
+}

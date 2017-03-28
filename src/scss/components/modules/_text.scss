@@ -1,0 +1,33 @@
+//Textos
+@mixin fuente($size:14) {
+    $em : $size / 14;
+    font-size:$size*1px;//Fallback navegadores antiguos
+    font-size: "#{$em}rem";
+}
+
+@mixin sombraTexto($ejeX: 0px,$ejeY: 0px,$blur: 5px, $color: $negro, $por:50%) {
+    -moz-text-shadow: $ejeX $ejeY $blur fade($color, $por);
+    text-shadow: $ejeX $ejeY $blur fade($color, $por);
+}
+
+@mixin mayusculas($mayus: uppercase) {
+    text-transform: $mayus;
+}
+@mixin capitales($cap:capitalize) {
+    text-transform:$cap;
+}
+@mixin centrado($cen: center) {
+    text-align:$cen;
+}
+@mixin izquierda($izq: left) {
+    text-align:$izq;
+}
+@mixin derecha($der: right) {
+    text-align:$der;
+}
+@mixin justificado($just:justify) {
+    text-align:$just;
+}
+@mixin cursiva($estilo:italic){
+  font-style: $estilo;
+}
