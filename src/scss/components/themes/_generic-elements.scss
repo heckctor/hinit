@@ -2,6 +2,10 @@
 *THEME GENERIC
 */
 
+
+@if $tema-generico == true { 
+
+
 body{
     color: $colorTexto;
     font-family: $fuenteGlobal;
@@ -193,6 +197,11 @@ hr{
 sub, sup, cite, acronym{
     color:$elementos;
 }
+
+
+
+}
+
 /*
 *END THEME GENERIC
 */
