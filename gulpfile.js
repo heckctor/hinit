@@ -21,6 +21,10 @@ const gulp = require('gulp'),
       postcss = require('gulp-postcss'),
       cssnano = require('cssnano'),//autoprefixer
 
+      //Concatenar JS
+      concat = require('gulp-concat'),
+      rename = require('gulp-rename'),
+
       //comprimir JS
       uglifyjs = require('uglify-js'),
       minifier = require('gulp-uglify/minifier'),
@@ -98,6 +102,25 @@ gulp.task('images', function() {
 });
 //Fin optimizar Imagenes
 
+//Concatenar JS
+
+var jsFiles = [
+  //Librerias
+  'src/js/lib/jquery-2.1.4.min.js', 
+  'src/js/lib/modernizr.js', 
+  'src/js/lib/prefixfree.min.js', 
+  //Codigo del sitio
+  'src/js/analytics.js', 
+  'src/js/codigo.js'
+  ],  
+    jsDest = 'src/jsc';
+
+gulp.task('concat-js', function() {  
+    return gulp.src(jsFiles)
+        .pipe(concat('scripts.js'))
+        .pipe(gulp.dest(jsDest));
+});
+
 //Comprimir JS
 gulp.task('compress-js', function (cb) {
   // the same options as described above 
@@ -106,7 +129,7 @@ gulp.task('compress-js', function (cb) {
   };
  
   pump([
-      gulp.src('src/js/*.js'),
+      gulp.src('src/jsc/*.js'),
       //gulp.src('src/js/**/*'),//Comprimir todos los JS
       minifier(options, uglifyjs),
       gulp.dest('assets/js/')
@@ -203,7 +226,8 @@ var dirList = [
 gulp.task('default', ['browser-sync'] , function() {
   gulp.watch('./src/scss/**/*.scss', ['sass-compile']);
   gulp.watch('./src/css/**/*.css', ['tasks-postcss']);
-  gulp.watch('./src/js/*.js', ['compress-js']);
+  gulp.watch('./src/js/*.js', ['concat-js']);
+  gulp.watch('./src/jsc/*.js', ['compress-js']);
   gulp.watch('./src/vistas/**/*', ['pug-compile']);
   gulp.watch(dirList, ['bs-reload']);
 });
