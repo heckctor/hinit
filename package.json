@@ -1,7 +1,7 @@
 {
   "name": "Hinit",
   "version": "1.0.0",
-  "description": "Plantilla inicial",
+  "description": "Plantilla en blanco",
   "main": "index.js",
   "repository": {
     "url": "https://github.com/heckctor/hinit.git",
@@ -14,7 +14,9 @@
     "cssnano": "^3.8.0",
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.5",
+    "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.1.1",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.2.0",
