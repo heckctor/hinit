@@ -28,11 +28,7 @@ const gulp = require('gulp'),
       //comprimir JS
       uglifyjs = require('uglify-js'),
       minifier = require('gulp-uglify/minifier'),
-      pump = require('pump'),
-      //limpieza de directorios
-      clean = require('gulp-clean')
-      //Condicionales dentro de gulp
-      gulpif = require('gulp-if');
+      pump = require('pump');
 
 
 
@@ -127,6 +123,7 @@ gulp.task('styles', function() {
 
 
 
+
 /* * * * *
 
 Tarea: Compilar / Minificar Sass
@@ -135,8 +132,10 @@ Tarea: Compilar / Minificar Sass
 
 //---> compilando archivos pug
 var pugFiles = [
+    './src/pug/*.pug',
+];
+var pugWatch = [
     './src/pug/**/*.pug',
-
 ];
 gulp.task('pugCompile',() =>
   gulp.src(pugFiles)
@@ -149,7 +148,7 @@ gulp.task('pugCompile',() =>
 
 
 gulp.task('pug', function() {
-    gulp.watch(pugFiles, ['pugCompile','clean']);
+    gulp.watch(pugWatch, ['pugCompile']);
 });
 
 // Fin Compilar archivos pug
@@ -306,25 +305,6 @@ function getFtpConnection() {
 
 
 
-/* * * * *
-
-Tarea: Limpieza de directorios
-
-* * * * */
-
-var deleteDir = [
-    './site/bloques'
-];
-
-gulp.task('clean', function() {
-   return gulp.src(deleteDir, {read: false})
-        .pipe(clean());
-});
-//Ffin limpeza de directorios
-
-
-
-
 gulp.task('sync', ['pug', 'styles', 'images', 'scripts', 'ftp'] , function() {
 
 });
@@ -334,5 +314,5 @@ Tarea: default
 
 * * * * */
 gulp.task('default', ['browser-sync', 'styles', 'pug', 'images', 'scripts'] , function() {
-  gulp.watch(dirList, ['bs-reload', 'clean']);
+  gulp.watch(dirList, ['bs-reload']);
 });
