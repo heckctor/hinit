@@ -1,6 +1,6 @@
 #__Hinit__ Theme
 
-####__*Plantilla en blanco lista para comenzar tu proyecto web sin preocuparte por configurar un entrono de trabajo desde cero.*__
+####__*Plantilla en blanco lista para comenzar tu proyecto web sin preocuparte por configurar un entorno de trabajo desde cero.*__
 
 ## Librerias y tecnologias incluidas
 
@@ -38,7 +38,7 @@ npm install gulp-cli -g
 ```
 
 
-### Instalación
+### Instalación de dependencias
 
 ```bash
 npm install
