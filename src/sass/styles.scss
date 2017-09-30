@@ -1,21 +1,28 @@
-//***Estilos***//
-//00___________Vendor
-@import 'components/vendor';
+@charset "UTF-8";
 
-//01___________Variables
+//___________Vendor
+
+@import 'node_modules/normalize-scss/sass/normalize';
+
+@import 'node_modules/bulma/bulma';
+//@import 'node_modules/ed-grid/ed-grid';
+//@import 'node_modules/bootstrap/scss/bootstrap';
+
+//___________Config
 @import 'components/settings';
 
-//02___________Modulos / Mixins
+
+//___________Modulos / Mixins
 @import 'components/modules';
 
-//03___________Estilos Base
+//___________Estilos Base
 @import 'components/base';
 
-//04___________Estructura
+//___________Estructura
 @import 'components/layout';
 
-//05___________Estilos
+//___________Estilos
 @import 'components/theme';
 
-//06___________Estilos de estado 
+//___________Estilos de estado 
 @import 'components/states'; 

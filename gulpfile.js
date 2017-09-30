@@ -10,8 +10,6 @@ const gulp = require('gulp'),
       plumber = require('gulp-plumber'),
       sass = require('gulp-sass'),
 
-      //PLugins para compilar pug
-      pug = require('gulp-pug'),
  
       //Plugins para optimizar imágenes
       imagemin = require('gulp-imagemin'),
@@ -44,7 +42,6 @@ var useServer = false;
 var dirList = [
     './site/assets/css/*.css',
     './site/assets/js/**/*',
-    './src/pug/*.pug',
     './site/assets/images/**/*',
     './site/*.html',
     './site/**/*.html',
@@ -124,34 +121,7 @@ gulp.task('styles', function() {
 
 
 
-/* * * * *
 
-Tarea: Compilar / Minificar Sass
-
-* * * * */
-
-//---> compilando archivos pug
-var pugFiles = [
-    './src/pug/*.pug',
-];
-var pugWatch = [
-    './src/pug/**/*.pug',
-];
-gulp.task('pugCompile',() =>
-  gulp.src(pugFiles)
-  .pipe(pug({
-    pretty:true
-  }))
-  .pipe(gulp.dest('./site'))  
-);
-
-
-
-gulp.task('pug', function() {
-    gulp.watch(pugWatch, ['pugCompile']);
-});
-
-// Fin Compilar archivos pug
 
 
 
@@ -305,7 +275,7 @@ function getFtpConnection() {
 
 
 
-gulp.task('sync', ['pug', 'styles', 'images', 'scripts', 'ftp'] , function() {
+gulp.task('sync', ['styles', 'images', 'scripts', 'ftp'] , function() {
 
 });
 /* * * * *
@@ -313,6 +283,6 @@ gulp.task('sync', ['pug', 'styles', 'images', 'scripts', 'ftp'] , function() {
 Tarea: default
 
 * * * * */
-gulp.task('default', ['browser-sync', 'styles', 'pug', 'images', 'scripts'] , function() {
+gulp.task('default', ['browser-sync', 'styles', 'images', 'scripts'] , function() {
   gulp.watch(dirList, ['bs-reload']);
 });

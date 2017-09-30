@@ -1,53 +1,51 @@
-@charset "UTF-8";
-
 // ----------------------
 // == Site settings
 // ----------------------
 
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-$fuenteGlobal:'Open Sans',sans-serif;
-$fuentePrimaria:'Open Sans',sans-serif;
-$fuenteSecundaria:'Open Sans',sans-serif;
-$fuenteTitulos:'Open Sans',sans-serif;
-$fuenteSubitulos:'Open Sans',sans-serif;
+
 
 // = Colors
 // -----------------------------
 
-$blanco:white;
-$gris:darken($blanco,50%);
-$negro:black;
-$oxford:lighten($negro,22%);
-$rojo:#F44336;
-$azul:#2196F3;
-$verde:#4CAF50;
-$amarillo:#FFC107;
-$nada:transparent;
+$gris:#CCCCCC;
+$negro:#333333;
+$none:transparent;
 
 
-$colorTexto:$oxford;
-$colorPrimario:$azul;
-$colorSecundario:$verde;
 
-//Elementos genericos
-$tema-generico:true;
-$elementos:$azul;
+$blue:#039BE5;
+$green:#00C853;
+$yellow:#FBC02D;
+$red:mix(#b71c1c,indianred);
+$silver:#f0f0f0;
+$gray:#b3b2b2;
+
+//Overrides bulma
+$primary: $blue;
+$info: $blue;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+
+
+$secondary:$red;
+
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Lato');
+$family-serif: 'Lato', sans-serif;
+$family-primary: $family-serif;
+
+//Break points
+$s:320px;
+$m:768px;
+$l:1280px;
+$xl:1920px;
+
+
 
 //Path's
 $rutaImg:'../images';
-//Break points
-$min-movil:320px;
-$max-movil:640px;
-$min-tablet:768px;
-$max-tablet:1024px;
-$min-laptop:1280px;
-$max-laptop:1366px;
-$escritorio:1420px;
 
 
-// = edGrid config
-// -----------------------------
-$cssCore: false;
-$cssHelpers: false;
-$devMode: false;
+
+

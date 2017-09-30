@@ -1,4 +1,27 @@
+//mixin para media queries
+@mixin from($from){
+    @media screen and (min-width:$from){
+        @content;
+    }
+}
 
+@mixin to($to){
+    @media screen and (max-width:$to){
+        @content;
+    }
+}
+
+@mixin fromTo($from,$to){
+    @media screen and (min-width: $from) and (max-width: ($to) - 1px) {
+        @content
+    }
+}
+
+//Sombras
+@mixin sombra($ejeX: 0px,$ejeY: 0px,$blur: 5px,$alfa: 0.5) {
+    -moz-box-shadow: $ejeX $ejeY $blur rgba(0,0,0,$alfa);
+    box-shadow: $ejeX $ejeY $blur rgba(0,0,0,$alfa);
+}
 
 
 //placeholders
